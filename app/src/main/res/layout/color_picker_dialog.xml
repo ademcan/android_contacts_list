@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:id="@+id/linearLayout2">
+
+    <TextView
+        android:id="@+id/create_contact_title"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="24dp"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="24dp"
+        android:ems="10"
+        android:gravity="center_vertical"
+        android:inputType="textPersonName"
+        android:text="Color picker"
+        android:textColor="@android:color/black"
+        android:textSize="20sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:text="Color picker" />
+
+
+    <ImageButton
+        android:id="@+id/button_purple"
+        android:layout_width="80dp"
+        android:layout_height="80dp"
+        android:layout_marginStart="24dp"
+        android:background="#AB47BC"
+        android:gravity="center"
+        android:layout_marginTop="24dp"
+        android:onClick="onColorClick"
+        app:layout_constraintEnd_toStartOf="@+id/button_blue"
+        app:layout_constraintHorizontal_chainStyle="spread_inside"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/create_contact_title" />
+
+    <ImageButton
+        android:id="@+id/button_blue"
+        android:layout_width="80dp"
+        android:layout_height="80dp"
+        android:background="#26C6DA"
+        android:gravity="center"
+        android:layout_marginTop="24dp"
+        android:onClick="onColorClick"
+        app:layout_constraintEnd_toStartOf="@+id/button_green"
+        app:layout_constraintStart_toEndOf="@id/button_purple"
+        app:layout_constraintTop_toBottomOf="@+id/create_contact_title" />
+
+    <ImageButton
+        android:id="@+id/button_green"
+        android:layout_width="80dp"
+        android:layout_height="80dp"
+        android:layout_marginEnd="24dp"
+        android:background="#43A047"
+        android:layout_marginTop="24dp"
+        android:button="@drawable/radiobutton_selector"
+        android:gravity="center"
+        android:onClick="onColorClick"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/button_blue"
+        app:layout_constraintTop_toBottomOf="@+id/create_contact_title" />
+
+
+    <ImageButton
+        android:id="@+id/button_red"
+        app:layout_constraintHorizontal_chainStyle="spread_inside"
+        android:layout_width="80dp"
+        android:layout_height="80dp"
+        android:layout_marginTop="24dp"
+        android:layout_marginLeft="24dp"
+        android:background="#E53935"
+        android:button="@drawable/radiobutton_selector"
+        android:gravity="center"
+        android:onClick="onColorClick"
+        app:layout_constraintEnd_toStartOf="@+id/button_orange"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/button_purple" />
+
+
+    <ImageButton
+        android:id="@+id/button_orange"
+        android:layout_marginTop="24dp"
+        android:layout_width="80dp"
+        android:layout_height="80dp"
+        android:background="#FB8C00"
+        android:button="@drawable/radiobutton_selector"
+        android:gravity="center"
+        android:onClick="onColorClick"
+        app:layout_constraintEnd_toStartOf="@+id/button_yellow"
+        app:layout_constraintStart_toEndOf="@id/button_red"
+        app:layout_constraintTop_toBottomOf="@+id/button_purple" />
+
+    <ImageButton
+        android:id="@+id/button_yellow"
+        android:layout_width="80dp"
+        android:layout_marginTop="24dp"
+        android:layout_height="80dp"
+        android:layout_marginEnd="24dp"
+        android:onClick="onColorClick"
+        android:background="#FBC02D"
+        android:button="@drawable/radiobutton_selector"
+        android:gravity="center"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/button_orange"
+        app:layout_constraintTop_toBottomOf="@+id/button_purple" />
+
+</android.support.constraint.ConstraintLayout>

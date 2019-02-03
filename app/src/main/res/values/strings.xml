@@ -1,4 +1,7 @@
 <resources>
     <string name="app_name">ContactsList</string>
     <string name="action_settings">Settings</string>
+    <string name="cancel">Cancel</string>
+    <string name="save">Save</string>
+    <string name="colorpicker">Color picker</string>
 </resources>

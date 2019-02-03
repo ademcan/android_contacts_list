@@ -1,9 +1,7 @@
 package ch.cansulting.contactslist;
 
-/**
- * Created by abilican on 02.02.19.
- */
-
+import android.graphics.Color;
+import android.graphics.drawable.GradientDrawable;
 import android.support.annotation.NonNull;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
@@ -26,11 +24,15 @@ public class ContactsAdapter extends RecyclerView.Adapter<ContactsAdapter.Contac
 
         public TextView firstname;
         public TextView lastname;
+        public TextView contactletter;
+        public GradientDrawable bgcolor;
+
 
         public ContactViewHolder(View itemView, final ContactClickListener clickListener) {
             super(itemView);
             firstname = (TextView) itemView.findViewById(R.id.textViewContactFirstname);
-            lastname = (TextView) itemView.findViewById(R.id.textViewContactLastname);
+            contactletter = (TextView) itemView.findViewById(R.id.contactIcon);
+            bgcolor = (GradientDrawable) contactletter.getBackground();
             itemView.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
@@ -47,8 +49,8 @@ public class ContactsAdapter extends RecyclerView.Adapter<ContactsAdapter.Contac
         this.dataset = new ArrayList<Contact>();
     }
 
-    public void setContacts(@NonNull List<Contact> notes) {
-        dataset = notes;
+    public void setContacts(@NonNull List<Contact> contacts) {
+        dataset = contacts;
         notifyDataSetChanged();
     }
 
@@ -67,8 +69,12 @@ public class ContactsAdapter extends RecyclerView.Adapter<ContactsAdapter.Contac
     @Override
     public void onBindViewHolder(ContactsAdapter.ContactViewHolder holder, int position) {
         Contact contact = dataset.get(position);
-        holder.firstname.setText(contact.getFirstName());
-        holder.lastname.setText(contact.getLastName());
+        // provide contact firstname+lastname
+        holder.firstname.setText(contact.getFirstName()+" "+contact.getLastName());
+        // get the first letter of the firstname and make uppercase
+        holder.contactletter.setText( (contact.getFirstName().substring(0,1)).toUpperCase() );
+        // update circle color for each contact
+        holder.bgcolor.setColor(Color.parseColor(  contact.getColor() ));
     }
 
     @Override

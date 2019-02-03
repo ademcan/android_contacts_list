@@ -1,16 +1,9 @@
 package ch.cansulting.contactslist;
 
-
-import org.greenrobot.greendao.annotation.Convert;
 import org.greenrobot.greendao.annotation.Entity;
 import org.greenrobot.greendao.annotation.Generated;
 import org.greenrobot.greendao.annotation.Id;
-import org.greenrobot.greendao.annotation.Index;
 import org.greenrobot.greendao.annotation.NotNull;
-
-/**
- * Created by abilican on 02.02.19.
- */
 
 @Entity
 public class Contact {
@@ -21,21 +14,21 @@ public class Contact {
     private String firstName;
     private String lastName;
     private String phoneNumber;
+    private String color;
 
-    
     public Contact(Long id) {
         this.id = id;
     }
 
-    @Generated(hash = 446839167)
+    @Generated(hash = 1279901726)
     public Contact(Long id, @NotNull String firstName, String lastName,
-            String phoneNumber) {
+            String phoneNumber, String color) {
         this.id = id;
         this.firstName = firstName;
         this.lastName = lastName;
         this.phoneNumber = phoneNumber;
+        this.color = color;
     }
-
 
     @Generated(hash = 672515148)
     public Contact() {
@@ -81,5 +74,12 @@ public class Contact {
         this.phoneNumber = phoneNumber;
     }
 
+    public String getColor() {
+        return this.color;
+    }
+
+    public void setColor(String color) {
+        this.color = color;
+    }
 
 }

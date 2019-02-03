@@ -9,4 +9,9 @@
         <!--android:title="@string/action_settings"-->
         <!--app:showAsAction="never" />-->
 
+        <item
+            android:id="@+id/add"
+            android:icon="@drawable/ic_check"
+            android:title="Search"
+            app:showAsAction="ifRoom" />
 </menu>
